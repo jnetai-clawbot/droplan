@@ -89,7 +89,7 @@ fun ClipboardScreen(
 
         if (allDevices.isNotEmpty()) {
             LazyColumn(Modifier.height(160.dp).padding(horizontal = 16.dp), contentPadding = PaddingValues(vertical = 4.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 items(allDevices) { device ->
                     FilterChip(
                         selected = selectedPeer?.deviceId == device.deviceId,

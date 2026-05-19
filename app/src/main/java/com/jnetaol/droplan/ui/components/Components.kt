@@ -72,6 +72,7 @@ fun EmptyState(icon: ImageVector, title: String, subtitle: String, modifier: Mod
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DeviceCard(
     deviceName: String,
@@ -104,29 +105,29 @@ fun DeviceCard(
 }
 
 @Composable
-fun TransferProgressCard(progress: FileTransferProgress, modifier: Modifier = Modifier) {
+fun TransferProgressCard(transferProgress: FileTransferProgress, modifier: Modifier = Modifier) {
     Card(modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp), colors = CardDefaults.cardColors(containerColor = DLCard),
         border = BorderStroke(1.dp, DLSurfaceVariant)) {
         Column(Modifier.padding(14.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(if (progress.direction == "send") Icons.Default.Upload else Icons.Default.Download, null, Modifier.size(20.dp), tint = if (progress.direction == "send") DLNeonCyan else DLNeonTeal)
+                    Icon(if (transferProgress.direction == "send") Icons.Default.Upload else Icons.Default.Download, null, Modifier.size(20.dp), tint = if (transferProgress.direction == "send") DLNeonCyan else DLNeonTeal)
                     Spacer(Modifier.width(8.dp))
-                    Text(progress.fileName, color = DLTextPrimary, fontSize = 14.sp, fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(transferProgress.fileName, color = DLTextPrimary, fontSize = 14.sp, fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
-                StatusBadge(progress.status.uppercase(), if (progress.status == "completed") DLSuccess else if (progress.status == "failed") DLError else DLNeonCyan)
+                StatusBadge(transferProgress.status.uppercase(), if (transferProgress.status == "completed") DLSuccess else if (transferProgress.status == "failed") DLError else DLNeonCyan)
             }
             Spacer(Modifier.height(8.dp))
             LinearProgressIndicator(
-                progress = { progress.progress / 100f },
+                progress = { transferProgress.progress / 100f },
                 modifier = Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)),
-                color = if (progress.status == "completed") DLSuccess else if (progress.status == "failed") DLError else DLPrimary,
+                color = if (transferProgress.status == "completed") DLSuccess else if (transferProgress.status == "failed") DLError else DLPrimary,
                 trackColor = DLSurfaceVariant
             )
             Spacer(Modifier.height(4.dp))
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                Text("${progress.progress}%", color = DLTextSecondary, fontSize = 12.sp)
-                if (progress.speedKbps > 0) Text("${progress.speedKbps} KB/s", color = DLTextMuted, fontSize = 12.sp)
+                Text("${transferProgress.progress}%", color = DLTextSecondary, fontSize = 12.sp)
+                if (transferProgress.speedKbps > 0) Text("${transferProgress.speedKbps} KB/s", color = DLTextMuted, fontSize = 12.sp)
             }
         }
     }

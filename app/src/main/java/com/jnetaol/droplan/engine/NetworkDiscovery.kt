@@ -143,7 +143,7 @@ class NetworkDiscovery(private val context: Context) {
                         val senderName = parts.getOrNull(4) ?: "Unknown"
                         writer.println("ACCEPT")
                         val transferId = UUID.randomUUID().toString()
-                        val progress = FileTransferProgress(transferId, fileName, 0, "receiving", "receive", senderName)
+                        val progress = FileTransferProgress(transferId, fileName, 0, "receiving", direction = "receive", peerName = senderName)
                         _transfers.update { it + progress }
                         receiveFile(socket, fileName, fileSize, transferId)
                     }
@@ -199,7 +199,7 @@ class NetworkDiscovery(private val context: Context) {
         scope.launch {
             try {
                 val transferId = UUID.randomUUID().toString()
-                val progress = FileTransferProgress(transferId, fileName, 0, "sending", "send", peer.name)
+                val progress = FileTransferProgress(transferId, fileName, 0, "sending", direction = "send", peerName = peer.name)
                 _transfers.update { it + progress }
                 val socket = Socket(peer.ipAddress, peer.port)
                 val writer = PrintWriter(socket.getOutputStream(), true)
