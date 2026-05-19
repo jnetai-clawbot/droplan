@@ -54,7 +54,7 @@ fun TransferScreen(
         if (discoveredDevices.isNotEmpty()) {
             SectionHeader("Select Device")
             LazyColumn(Modifier.height(120.dp).padding(horizontal = 16.dp), contentPadding = PaddingValues(vertical = 4.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 items(discoveredDevices) { device ->
                     FilterChip(
                         selected = selectedDevice?.deviceId == device.deviceId,

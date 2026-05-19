@@ -83,9 +83,8 @@ fun DeviceCard(
     onTap: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Card(modifier, shape = RoundedCornerShape(12.dp), colors = CardDefaults.cardColors(containerColor = DLCard),
-        border = BorderStroke(1.dp, if (isOnline) DLNeonCyan.copy(alpha = 0.4f) else DLSurfaceVariant),
-        onClick = onTap) {
+    Card(onClick = onTap, modifier = modifier, shape = RoundedCornerShape(12.dp), colors = CardDefaults.cardColors(containerColor = DLCard),
+        border = BorderStroke(1.dp, if (isOnline) DLNeonCyan.copy(alpha = 0.4f) else DLSurfaceVariant)) {
         Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.size(44.dp).shadow(8.dp, CircleShape, ambientColor = if (isOnline) DLNeonCyan else DLTextMuted)
                 .clip(CircleShape).background(if (isOnline) DLPrimary.copy(alpha = 0.2f) else DLSurfaceVariant), contentAlignment = Alignment.Center) {
