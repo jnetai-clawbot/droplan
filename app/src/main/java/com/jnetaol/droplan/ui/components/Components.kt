@@ -118,7 +118,7 @@ fun TransferProgressCard(transferProgress: FileTransferProgress, modifier: Modif
             }
             Spacer(Modifier.height(8.dp))
             LinearProgressIndicator(
-                progress = { transferProgress.progress / 100f },
+                progress = transferProgress.progress / 100f,
                 modifier = Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)),
                 color = if (transferProgress.status == "completed") DLSuccess else if (transferProgress.status == "failed") DLError else DLPrimary,
                 trackColor = DLSurfaceVariant
