@@ -1,0 +1,26 @@
+DropLAN v1.0.0 - Initial Release
+===================================
+DropLAN - Local Network File Drop
+Like AirDrop, but for Android & Linux devices on your local network.
+
+Changes:
+- Created complete Android app project structure
+- Gradle 8.5, Kotlin 1.9.22, AGP 8.2.2, Compose BOM 2024.01.00, Room 2.6.1, KSP
+- MinSdk 29, TargetSdk 34, compileSdk 34, ARM64 only
+- DebugLogger with DL-xxx error codes pattern
+- Room database: TransferHistory and PeerDevice entities with DAOs
+- NetworkDiscovery engine: UDP multicast device discovery, TCP file transfer, clipboard sync
+- QRCodeHandler: QR code generation and parsing for device pairing
+- FileTransferService: Foreground service for ongoing transfers
+- Dark Material Design 3 theme with cyan/teal neon colors (Color.kt, Theme.kt)
+- Reusable components: GlowButton, NeonCard, SectionHeader, StatusBadge, EmptyState, DeviceCard, TransferProgressCard
+- HomeScreen: nearby devices, network status, device list, server start/stop
+- TransferScreen: file picker, device selector, drag-drop area, active transfers list, transfer history
+- ClipboardScreen: clipboard content editor, send/receive clipboard sync with paired devices
+- PairScreen: QR code generation and display, simulated QR scanner, manual IP pairing
+- SettingsScreen: about section with jnetaol.com link, version display, server controls, data management, share, check for updates
+- GitHub Actions: Debug APK build on push/PR, Release APK build on tag v* or manual trigger
+- APK naming: DropLAN-vX.X.X.apk (release), DropLAN-vX.X.X-debug.apk (debug)
+- Keystore alias: droplan
+- Project files: .gitignore, README.md, LICENSE, CHANGELOG.md, changes.txt
+- Resources: adaptive icon, colors, strings, themes, network_security_config
