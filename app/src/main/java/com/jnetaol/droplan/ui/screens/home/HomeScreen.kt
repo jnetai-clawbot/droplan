@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.jnetaol.droplan.data.model.PeerDevice
 import com.jnetaol.droplan.engine.DiscoveredDevice
 import com.jnetaol.droplan.ui.components.*
 import com.jnetaol.droplan.ui.screens.AppViewModel

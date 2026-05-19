@@ -97,7 +97,7 @@ fun SettingsScreen(
                     SettingsRow(Icons.Default.DeleteSweep, "Clear Transfer History", "Remove all past transfer records") {
                         viewModel.clearHistory()
                     }
-                    HorizontalDivider(color = DLSurfaceVariant, thickness = 0.5.dp)
+                    Divider(color = DLSurfaceVariant, thickness = 0.5.dp)
                     SettingsRow(Icons.Default.FolderDelete, "Clear Known Devices", "Remove all paired devices") {
                         viewModel.showToast("Devices cleared")
                     }
@@ -113,14 +113,14 @@ fun SettingsScreen(
                     SettingsRow(Icons.Default.Share, "Share DropLAN", "Tell friends about DropLAN") {
                         viewModel.shareApp()
                     }
-                    HorizontalDivider(color = DLSurfaceVariant, thickness = 0.5.dp)
+                    Divider(color = DLSurfaceVariant, thickness = 0.5.dp)
                     SettingsRow(Icons.Default.Update, "Check For Updates", "Version ${viewModel.versionName}") {
                         try {
                             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/jnetaol/droplan/releases"))
                             context.startActivity(intent)
                         } catch (_: Exception) {}
                     }
-                    HorizontalDivider(color = DLSurfaceVariant, thickness = 0.5.dp)
+                    Divider(color = DLSurfaceVariant, thickness = 0.5.dp)
                     SettingsRow(Icons.Default.Info, "About DropLAN", "Like AirDrop, for Android & Linux") {
                         viewModel.openWebsite()
                     }

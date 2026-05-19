@@ -91,7 +91,7 @@ fun PairScreen(
 
             Spacer(Modifier.height(20.dp))
 
-            HorizontalDivider(color = DLSurfaceVariant, thickness = 1.dp)
+            Divider(color = DLSurfaceVariant, thickness = 1.dp)
             Spacer(Modifier.height(20.dp))
 
             Text("--- OR ---", color = DLTextMuted, fontSize = 13.sp)
@@ -146,7 +146,7 @@ fun PairScreen(
 
             // Manual entry
             Spacer(Modifier.height(20.dp))
-            HorizontalDivider(color = DLSurfaceVariant, thickness = 1.dp)
+            Divider(color = DLSurfaceVariant, thickness = 1.dp)
             Spacer(Modifier.height(16.dp))
             Text("Manual Pair", color = DLTextSecondary, fontSize = 13.sp)
             Spacer(Modifier.height(8.dp))
