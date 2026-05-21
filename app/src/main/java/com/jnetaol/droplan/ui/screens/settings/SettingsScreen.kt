@@ -58,7 +58,7 @@ fun SettingsScreen(
 
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
                         TextButton(onClick = { viewModel.openWebsite() }) {
-                            Text("Made By jnetaol.com", color = DLNeonCyan, fontSize = 14.sp, fontWeight = FontWeight.Medium)
+                            Text("Made By jnetai.com", color = DLNeonCyan, fontSize = 14.sp, fontWeight = FontWeight.Medium)
                         }
                     }
                 }
@@ -144,7 +144,7 @@ fun SettingsScreen(
 
             // Footer
             Text(
-                "DropLAN v${viewModel.versionName}  |  Made by jnetaol.com",
+                "DropLAN v${viewModel.versionName}  |  Made by jnetai.com",
                 Modifier.fillMaxWidth(),
                 color = DLTextMuted, fontSize = 11.sp, textAlign = TextAlign.Center
             )

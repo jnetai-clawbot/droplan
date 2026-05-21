@@ -26,4 +26,4 @@ Like AirDrop, but for Android and Linux devices on your local network.
 
 ## Made By
 
-**[jnetaol.com](https://jnetaol.com)**
+**[jnetai.com](https://jnetai.com)**

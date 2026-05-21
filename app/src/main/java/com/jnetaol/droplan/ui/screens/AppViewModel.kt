@@ -39,7 +39,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     private val _clipboardText = MutableStateFlow("")
     val clipboardText: StateFlow<String> = _clipboardText.asStateFlow()
 
-    val versionName = "1.0.0"
+    val versionName = "1.0.1"
     val versionCode = 1
 
     init {
@@ -207,14 +207,14 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         val shareIntent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
             putExtra(Intent.EXTRA_SUBJECT, "DropLAN - Local Network File Drop")
-            putExtra(Intent.EXTRA_TEXT, "Try DropLAN for fast local network file transfers! Like AirDrop for Android. Made by jnetaol.com")
+            putExtra(Intent.EXTRA_TEXT, "Try DropLAN for fast local network file transfers! Like AirDrop for Android. Made by jnetai.com")
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         context.startActivity(shareIntent)
     }
 
     fun openWebsite() {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://jnetaol.com")).apply {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://jnetai.com")).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         getApplication<Application>().startActivity(intent)
