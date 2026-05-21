@@ -116,7 +116,7 @@ fun SettingsScreen(
                     Divider(color = DLSurfaceVariant, thickness = 0.5.dp)
                     SettingsRow(Icons.Default.Update, "Check For Updates", "Version ${viewModel.versionName}") {
                         try {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/jnetaol/droplan/releases"))
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/jnetai-clawbot/DropLAN/releases"))
                             context.startActivity(intent)
                         } catch (_: Exception) {}
                     }

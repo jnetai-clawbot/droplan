@@ -39,7 +39,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     private val _clipboardText = MutableStateFlow("")
     val clipboardText: StateFlow<String> = _clipboardText.asStateFlow()
 
-    val versionName = "1.0.1"
+    val versionName = "1.0.2"
     val versionCode = 1
 
     init {
